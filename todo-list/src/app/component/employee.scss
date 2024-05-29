@@ -1,0 +1,46 @@
+$color-dark-purple: #a66cff;
+$color-soft-purple: #9c9efe;
+$color-grey: #808080;
+$color-black: #000000;
+$color-white: #ffffff;
+
+.button-group {
+    margin-top: 100px;
+    text-align: center;
+
+    .button-delete {
+        background-color: rgb(220, 69, 69);
+        color: $color-white;
+    }
+
+    .button-update {
+        background-color: $color-white;
+        color: $color-grey;
+    }
+
+    .button-insert {
+        background-color: $color-soft-purple;
+        color: $color-white;
+    }
+}
+
+
+.block {
+    justify-content: space-between;
+    height: flex;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 20px;
+    background-color: $color-white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.table {
+    padding-left: 4%;
+    padding-right: 4%;
+
+}
+
+.body-emp {
+    margin-top: 30px;
+}

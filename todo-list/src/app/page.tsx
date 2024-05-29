@@ -1,18 +1,11 @@
-import Navbar from "./view/navbar";
+import Employee from "./employee/page";
+import Project from "./project/page";
+import Task from "./task/page";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-     <div>
-      <header>
-        <Navbar />
-      </header>
-     </div>
-     <div>
-      <body>
-        
-      </body>
-     </div>
-    </main>
+    <Employee />
+    // <Project />
+    // <Task />
   );
 }

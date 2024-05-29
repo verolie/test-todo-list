@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
+
+$color-dark-purple: #a66cff;
+$color-soft-purple: #9c9efe;
+$color-grey: #808080;
+$color-black: #000000;
+$color-white: #ffffff;
+
+header {
+    margin-bottom: 50px;
+}
+
+.Navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    transition: all 0.5s ease;
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -6px #222;
+    background-color: $color-white;
+
+    .NavLog {
+        display: flex;
+        align-items: center;
+        margin-left: 47px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        .NavHello {
+            font-family: "Sora";
+            font-size: 20px;
+            font-weight: 700;
+            color: $color-dark-purple;
+        }
+
+        .NavName {
+            padding-left: 4px;
+            font-family: "Sora";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 300;
+            color: $color-black;
+        }
+    }
+
+    .NavRoutes {
+        margin-right: 47px;
+        display: flex;
+        align-items: center;
+
+        a {
+            padding: 10px;
+            font-family: "Sora";
+            font-size: 18px;
+            font-weight: 550;
+            color: $color-black;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: $color-soft-purple;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+
+            &:hover {
+                color: $color-soft-purple;
+
+                &::after {
+                    transform: scaleX(1);
+                    transform-origin: bottom left;
+                }
+            }
+
+            &.active {
+                color: $color-soft-purple;
+            }
+        }
+    }
+}
