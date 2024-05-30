@@ -40,7 +40,7 @@ export default function Project() {
         style={{ marginTop: 100 }}
       >
         <div className="flex justify-end w-6/12">
-          <div className=" flex grid grid-cols-3 gap-4 place-items-stretch w-80">
+          <div className="grid grid-cols-3 gap-4 place-items-stretch w-80">
             {/* delete button */}
             <button
               className="block button-delete"
@@ -55,7 +55,7 @@ export default function Project() {
             >
               <h1>Are you sure want to delete this data?</h1>
               <div className="button-group">
-                <div className=" flex grid grid-cols-2 gap-4 place-items-stretch justify-end mt-3">
+                <div className="grid grid-cols-2 gap-4 place-items-stretch justify-end mt-3">
                   <button
                     className="block button-delete"
                     onClick={() => setIsOpenDelete(false)}
@@ -92,25 +92,25 @@ export default function Project() {
                     </label>
                     <input
                       type="text"
-                      className="validate block"
-                      id="grid-name"
+                      className="validate"
+                      id="grid-project-name"
                       placeholder="Insert Employee Name"
                     />
                   </div>
                 </div>
-                <div className="flex flex-wrap w-full px-3 mb-3 md:mb-0 -mx-3">
-                  <label className="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="flex flex-wrap w-full px-3 mb-3 md:mb-3 -mx-3">
+                  <label className="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 mt-3">
                     Project Description
                   </label>
                   <textarea
-                    className="validate block w-full  px-3"
-                    id="grid-Job"
+                    className="validate w-full  px-3"
+                    id="grid-project-desc"
                     placeholder="Desctiption"
                   />
                 </div>
               </form>
               <div className="button-group">
-                <div className=" flex grid grid-cols-2 gap-4 place-items-stretch justify-end mt-3">
+                <div className="grid grid-cols-2 gap-4 place-items-stretch justify-end mt-3">
                   <button
                     className="block button-insert"
                     onClick={() => setIsOpenEdit(false)}
@@ -147,19 +147,19 @@ export default function Project() {
                     </label>
                     <input
                       type="text"
-                      className="validate block"
-                      id="grid-title"
+                      className="validate"
+                      id="grid-project-name"
                       placeholder="Insert Employee Name"
                     />
                   </div>
                 </div>
-                <div className="flex flex-wrap w-full px-3 mb-3 md:mb-0 -mx-3">
-                  <label className="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                <div className="flex flex-wrap w-full px-3 mb-3 md:mb-3 -mx-3">
+                  <label className="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 mt-3">
                     Project Description
                   </label>
                   <textarea
-                    className="validate block w-full  px-3"
-                    id="grid-desc"
+                    className="validate w-full  px-3"
+                    id="grid-project-desc"
                     placeholder="Desctiption"
                   />
                 </div>
@@ -185,7 +185,7 @@ export default function Project() {
         </div>
       </div>
       <div className="body-emp flex justify-center w-full">
-        <div className="block table flex justify-center">
+        <div className="block table justify-center">
           <table className="border-separate border-spacing-x-10 border-spacing-y-10 w-full">
             <thead>
               <tr>

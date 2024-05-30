@@ -104,7 +104,7 @@ export default function Employee() {
                     <input
                       type="text"
                       className="validate"
-                      id="grid-Job"
+                      id="grid-job-title"
                       placeholder="Insert Job"
                     />
                   </div>
@@ -118,7 +118,7 @@ export default function Employee() {
                     <div className="relative">
                       <select
                         className="appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="grid-state"
+                        id="grid-priject"
                       >
                         <option>Finexus</option>
                         <option>Finpoint</option>
@@ -187,7 +187,7 @@ export default function Employee() {
                     <input
                       type="text"
                       className="validate"
-                      id="grid-Job"
+                      id="grid-job-title"
                       placeholder="Insert Job"
                     />
                   </div>
@@ -201,7 +201,7 @@ export default function Employee() {
                     <div className="relative">
                       <select
                         className="appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                        id="grid-state"
+                        id="grid-project"
                       >
                         <option>Finexus</option>
                         <option>Finpoint</option>
