@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = "mongodb+srv://user:4aselQSWgXt5UX7I@database-todo-list.hp6ygd6.mongodb.net/todolistDB?retryWrites=true&w=majority&appName=Database-todo-list"
+}
+
+model Employee {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  employee_name   String   
+  job_title       String
+  project_name    String
+}
+
+model Project {
+  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  project_name  String
+  project_desc  String
+}
+
+// Address is an embedded document
+
+model Task {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  task_title      String   
+  task_desc       String
+  task_code       String
+  status          String   
+  priority_level  String
+  project_name    String
+  employee_name   String
+  due_date        String
+}

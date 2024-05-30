@@ -410,12 +410,12 @@ export default function Task() {
                       </div>
                     </div>
                   </div>
-                  <div className=" w-6/12 px-3 mb-6 md:mb-0 mt-5">
+                  <div className=" w-6/12 px-3 mb-6 md:mb-0">
                     <label className="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                       due-date
                     </label>
                     <DatePicker
-                      className="mt-2 mb-3"
+                      className="mb-3"
                       id="grid-due-date"
                       placeholderText="Select Due Date"
                       selected={startDate}
