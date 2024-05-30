@@ -165,7 +165,7 @@ export default function Project() {
                 </div>
               </form>
               <div className="button-group">
-                <div className=" flex grid grid-cols-2 gap-4 place-items-stretch justify-end mt-3">
+                <div className="grid grid-cols-2 gap-4 place-items-stretch justify-end mt-3">
                   <button
                     className="block button-insert"
                     onClick={() => setIsOpenInsert(false)}
@@ -185,7 +185,7 @@ export default function Project() {
         </div>
       </div>
       <div className="body-emp flex justify-center w-full">
-        <div className="block table justify-center">
+        <div className="table justify-center">
           <table className="border-separate border-spacing-x-10 border-spacing-y-10 w-full">
             <thead>
               <tr>
