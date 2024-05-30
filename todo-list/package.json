@@ -9,11 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@material-tailwind/html": "^2.2.2",
     "@types/react-router-dom": "^5.3.3",
     "bootstrap": "^5.3.3",
+    "mongodb": "^6.7.0",
     "next": "14.2.3",
     "react": "^18",
+    "react-datepicker": "^6.9.0",
     "react-dom": "^18",
+    "react-modal": "^3.16.1",
     "react-router-dom": "^6.23.1",
     "sass": "^1.77.2"
   },
@@ -21,7 +25,9 @@
     "@iconify/react": "^4.1.1",
     "@types/node": "^20",
     "@types/react": "^18",
+    "@types/react-datepicker": "^6.2.0",
     "@types/react-dom": "^18",
+    "@types/react-modal": "^3.16.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
