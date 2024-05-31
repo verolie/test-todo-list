@@ -1,4 +1,3 @@
-
 import { prisma } from '../../../../../../lib/prisma';
 import { connectDatabase } from '../../../multi';
 import { NextRequest, NextResponse } from "next/server";
@@ -9,7 +8,7 @@ export async function GET(req: NextRequest, { params }: { params: { id: string }
 
     try {
       await connectDatabase()
-      const newProject = await prisma.project.delete({
+      const newProject = await prisma.employee.delete({
         where: {
           id,
         }
