@@ -4,6 +4,7 @@ import Navbar from "../view/navbar";
 import React, { useState } from "react";
 import "../component/project.scss";
 import Modal from "react-modal";
+import { onSubmitInsert } from "../process/project-process";
 
 export default function Project() {
   const [isOpenDelete, setIsOpenDelete] = useState(false);
@@ -94,7 +95,7 @@ export default function Project() {
                       type="text"
                       className="validate"
                       id="grid-project-name"
-                      placeholder="Insert Employee Name"
+                      placeholder="Insert Project Name"
                     />
                   </div>
                 </div>
@@ -139,7 +140,7 @@ export default function Project() {
               onRequestClose={() => setIsOpenInsert(false)}
               style={customStyles}
             >
-              <form className="w-full max-w-lg">
+              <form className="w-full max-w-lg" onSubmit={onSubmitInsert}>
                 <div className="flex flex-wrap -mx-3 mb-3">
                   <div className="w-full md:w-1/2 px-3 mb-3 md:mb-0">
                     <label className="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
@@ -148,8 +149,8 @@ export default function Project() {
                     <input
                       type="text"
                       className="validate"
-                      id="grid-project-name"
-                      placeholder="Insert Employee Name"
+                      id="project_name"
+                      placeholder="Insert Project Name"
                     />
                   </div>
                 </div>
@@ -159,27 +160,24 @@ export default function Project() {
                   </label>
                   <textarea
                     className="validate w-full  px-3"
-                    id="grid-project-desc"
+                    id="project_desc"
                     placeholder="Desctiption"
                   />
                 </div>
-              </form>
-              <div className="button-group">
-                <div className="grid grid-cols-2 gap-4 place-items-stretch justify-end mt-3">
-                  <button
-                    className="block button-insert"
-                    onClick={() => setIsOpenInsert(false)}
-                  >
-                    Confirm
-                  </button>
-                  <button
-                    className="block button-update"
-                    onClick={() => setIsOpenInsert(false)}
-                  >
-                    Cancle
-                  </button>
+                <div className="button-group">
+                  <div className="grid grid-cols-2 gap-4 place-items-stretch justify-end mt-3">
+                    <button className="block button-insert" type="submit">
+                      Confirm
+                    </button>
+                    <button
+                      className="block button-update"
+                      onClick={() => setIsOpenInsert(false)}
+                    >
+                      Cancle
+                    </button>
+                  </div>
                 </div>
-              </div>
+              </form>
             </Modal>
           </div>
         </div>
@@ -193,6 +191,7 @@ export default function Project() {
                 <th>Project Name</th>
                 <th>Project Desc</th>
                 <th>Total Person</th>
+                <th>Select</th>
               </tr>
             </thead>
             <tbody>
@@ -201,6 +200,9 @@ export default function Project() {
                 <td>Finpoint</td>
                 <td>Software engineer</td>
                 <td>100</td>
+                <td>
+                  <input type="checkbox" className="box" />
+                </td>
               </tr>
               <tr>
                 <td>2</td>

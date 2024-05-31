@@ -1,33 +1,29 @@
-// pages/api/employees.ts
-
-import type { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '../../../../../lib/prisma';
+import { connectDatabase } from '../../multi';
 
 type Employee = {
-  employeeName: string;
-  jobTitle: string;
-  projectName: string;
+  employee_name: string;
+  job_title: string;
+  project_name: string;
 };
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method === 'POST') {
-    const { employeeName, jobTitle, projectName}: Employee = req.body;
+export async function  POST(req: Request) {
+    const data = await req.json();
+    console.log(data)
+    const { employee_name, job_title, project_name }: Employee = data;
 
     try {
+      await connectDatabase()
+      console.log(employee_name)
       const newEmployee = await prisma.employee.create({
         data: {
-          employee_name: employeeName,
-          job_title: jobTitle,
-          project_name: projectName,
+          employee_name, 
+          job_title,
+          project_name,
         },
       });
-      res.status(201).json({ success: true, data: newEmployee });
+      return new Response("success insert new employee")
     } catch (error) {
-      console.error('Error creating employee:', error);
-      res.status(500).json({ success: false, message: 'Failed to create employee' });
+      return new Response("Failed to create employee")
     }
-  } else {
-    res.setHeader('Allow', ['POST']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
-  }
 }

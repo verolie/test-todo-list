@@ -3,6 +3,7 @@ import { prisma } from '../../../../../lib/prisma';
 import { connectDatabase } from '../../multi';
 
 type Project = {
+  id: string;
   project_name: string;
   project_desc: string;
 };
@@ -10,18 +11,22 @@ type Project = {
 export async function  POST(req: Request) {
   const data = await req.json();
   console.log(data)
-  const { project_name, project_desc}: Project = data;
+  const { id, project_name, project_desc}: Project = data;
 
+  
     try {
       await connectDatabase()
-      const newProject = await prisma.project.create({
-        data: {
-          project_name,
-          project_desc,
+      const project = await prisma.project.update({
+        where: {
+            id,
         },
-      });
-      return new Response("success insert new project")
+        data: {
+            project_name,
+            project_desc,
+        },
+      })
+      return new Response("success update new project")
     } catch (error) {
-      return new Response("Failed to create employee")
+      return new Response("Failed to update employee")
     }
 } 
