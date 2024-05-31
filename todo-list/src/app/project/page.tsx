@@ -240,7 +240,7 @@ export default function Project() {
                     <input
                       type="text"
                       className="validate"
-                      id="project_name"
+                      id="insert_project_name"
                       placeholder="Insert Project Name"
                     />
                   </div>
@@ -251,7 +251,7 @@ export default function Project() {
                   </label>
                   <textarea
                     className="validate w-full  px-3"
-                    id="project_desc"
+                    id="insert_project_desc"
                     placeholder="Desctiption"
                   />
                 </div>

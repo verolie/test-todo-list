@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent } from "react";
 
 type Project = {
   project_name: string;
@@ -13,10 +13,10 @@ type ProjectEdit = {
 
 export async function onSubmitInsert(event: FormEvent<HTMLFormElement>) {
   let projectNameInput = document.getElementById(
-    "project_name"
+    "insert_project_name"
   ) as HTMLInputElement;
   let projectDescInput = document.getElementById(
-    "project_desc"
+    "insert_project_desc"
   ) as HTMLInputElement;
   const projectName = projectNameInput.value;
   const projectDesc = projectDescInput.value;

@@ -19,7 +19,7 @@ export async function  POST(req: Request) {
   
     try {
       await connectDatabase()
-      const project = await prisma.employee.update({
+      const employee = await prisma.employee.update({
         where: {
             id,
         },
@@ -29,6 +29,8 @@ export async function  POST(req: Request) {
             project_name
         },
       })
+
+      console.log(employee)
       return new Response("success update new project")
     } catch (error) {
       return new Response("Failed to update employee")
