@@ -19,6 +19,7 @@ export async function  POST(req: Request) {
   console.log(data)
   const { task_title, task_desc, task_code, status, priority_level, project_name, employee_name, due_date}: Task = data;
 
+  formatDateToYYYYMMDD(due_date)
     try {
       const newTask = await prisma.task.create({
         data: {
@@ -38,3 +39,11 @@ export async function  POST(req: Request) {
       return new Response("Failed to create task")
     }
 }
+
+const formatDateToYYYYMMDD = (dateString: string): string => {
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}${month}${day}`;
+  };
