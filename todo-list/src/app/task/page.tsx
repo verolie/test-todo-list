@@ -126,6 +126,19 @@ export default function Task() {
     fetchEmployee();
   }, []);
 
+    useEffect(() => {
+      const clearCacheData = () => {
+        caches.keys().then((names) => {
+          names.forEach((name) => {
+            caches.delete(name);
+          });
+        });
+        alert("Complete Cache Cleared");
+      };
+
+      clearCacheData();
+    }, []);
+
   function onChange(indexCheck: number) {
     router.refresh();
     if (indexCheck != null) {
