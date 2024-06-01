@@ -74,8 +74,6 @@ export default function Task() {
           "Content-Type": "application/json",
         },
       });
-
-      console.log(response);
       if (!response.ok) {
         throw new Error("Failed to fetch projects");
       }
@@ -93,7 +91,6 @@ export default function Task() {
         },
       });
 
-      console.log(responseProj);
       if (!responseProj.ok) {
         throw new Error("Failed to fetch projects");
       }
@@ -111,7 +108,6 @@ export default function Task() {
         },
       });
 
-      console.log(responseProj);
       if (!responseProj.ok) {
         throw new Error("Failed to fetch projects");
       }
@@ -184,15 +180,15 @@ export default function Task() {
 
   const handleChangeDueDate = (date: Date | null) => {
     if (date) {
-      setInputDueDate(formatDateToDDMMYYYY(date)); // Or any other date format you prefer
+      setInputDueDate(formatDateToDDMMYYYY(date));
     } else {
-      setInputDueDate(""); // Or handle null case as needed
+      setInputDueDate("");
     }
   };
 
   const formatDateToDDMMYYYY = (date: Date): string => {
     const day = String(date.getDate()).padStart(2, "0");
-    const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are zero-based
+    const month = String(date.getMonth() + 1).padStart(2, "0");
     const year = date.getFullYear();
 
     return `${day}/${month}/${year}`;

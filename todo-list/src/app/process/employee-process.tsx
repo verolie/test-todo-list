@@ -26,8 +26,6 @@ export async function onSubmitInsert(event: FormEvent<HTMLFormElement>) {
   const employeeName = projectNameInput.value;
   const employeeTitle = projectTitleInput.value;
   const projName = projectProjInput.value;
-  console.log(projectNameInput);
-  console.log(employeeName);
 
   event.preventDefault();
 
@@ -47,7 +45,6 @@ export async function onSubmitInsert(event: FormEvent<HTMLFormElement>) {
 
   // // Handle response if necessary
   const data = await response;
-  console.log("Response data:", data);
   // ...
 }
 
@@ -66,8 +63,6 @@ export async function onSubmitEdit(event: FormEvent<HTMLFormElement>) {
   const employeeName = projectNameInput.value;
   const employeeTitle = projectTitleInput.value;
   const projName = projectProjInput.value;
-  console.log(projectNameInput);
-  console.log(employeeName);
 
   event.preventDefault();
 
@@ -88,7 +83,6 @@ export async function onSubmitEdit(event: FormEvent<HTMLFormElement>) {
 
   // // Handle response if necessary
   const data = await response;
-  console.log("Response data:", data);
   window.location.reload();
   // ...
 }
@@ -98,7 +92,6 @@ export async function onSubmitDelete(event: FormEvent<HTMLFormElement>) {
     "hidden-id"
   ) as HTMLInputElement;
   const id_employee = idEmployeeInput.value;
-  console.log(id_employee);
 
   event.preventDefault();
 
@@ -111,7 +104,6 @@ export async function onSubmitDelete(event: FormEvent<HTMLFormElement>) {
 
   // // Handle response if necessary
   const data = await response;
-  console.log("Response data:", data);
   window.location.reload();
   // ...
 }

@@ -57,9 +57,6 @@ export async function onSubmitInsert(event: FormEvent<HTMLFormElement>) {
   const projectName = projectProjInput.value;
   const employee_name = projectEmpInput.value;
   const due_date = projectDueInput.value;
-  console.log(taskDesc);
-  console.log(priorityLevel);
-
   event.preventDefault();
 
   const taskData: Task = {
@@ -83,7 +80,6 @@ export async function onSubmitInsert(event: FormEvent<HTMLFormElement>) {
 
   // // Handle response if necessary
   const data = await response;
-  console.log("Response data:", data);
   window.location.reload();
   // ...
 }
@@ -123,8 +119,6 @@ export async function onSubmitEdit(event: FormEvent<HTMLFormElement>) {
   const projectName = projectProjInput.value;
   const employee_name = projectEmpInput.value;
   const due_date = projectDueInput.value;
-  console.log(taskDesc);
-  console.log(priorityLevel);
 
   event.preventDefault();
 
@@ -150,7 +144,6 @@ export async function onSubmitEdit(event: FormEvent<HTMLFormElement>) {
 
   // // Handle response if necessary
   const data = await response;
-  console.log("Response data:", data);
   window.location.reload();
   // ...
 }
@@ -158,8 +151,6 @@ export async function onSubmitEdit(event: FormEvent<HTMLFormElement>) {
 export async function onSubmitDelete(event: FormEvent<HTMLFormElement>) {
   let idTaskInput = document.getElementById("hidden-id") as HTMLInputElement;
   const id_edit = idTaskInput.value;
-  console.log(id_edit);
-
   event.preventDefault();
 
   const response = fetch("/api/task/delete/" + id_edit, {
@@ -171,7 +162,6 @@ export async function onSubmitDelete(event: FormEvent<HTMLFormElement>) {
 
   // // Handle response if necessary
   const data = await response;
-  console.log("Response data:", data);
   window.location.reload();
   // ...
 }

@@ -20,8 +20,6 @@ export async function onSubmitInsert(event: FormEvent<HTMLFormElement>) {
   ) as HTMLInputElement;
   const projectName = projectNameInput.value;
   const projectDesc = projectDescInput.value;
-  console.log(projectNameInput);
-  console.log(projectName);
 
   event.preventDefault();
 
@@ -40,7 +38,6 @@ export async function onSubmitInsert(event: FormEvent<HTMLFormElement>) {
 
   // // Handle response if necessary
   const data = await response;
-  console.log("Response data:", data);
   window.location.reload();
   // ...
 }
@@ -56,8 +53,6 @@ export async function onSubmitEdit(event: FormEvent<HTMLFormElement>) {
   const id_proj = idProjInput.value;
   const projectName = projectNameInput.value;
   const projectDesc = projectDescInput.value;
-  console.log(projectNameInput);
-  console.log(projectName);
 
   event.preventDefault();
 
@@ -66,8 +61,6 @@ export async function onSubmitEdit(event: FormEvent<HTMLFormElement>) {
     project_name: projectName,
     project_desc: projectDesc,
   };
-
-  console.log(projectData);
 
   const response = fetch("/api/project/edit", {
     method: "POST",
@@ -79,17 +72,13 @@ export async function onSubmitEdit(event: FormEvent<HTMLFormElement>) {
 
   // // Handle response if necessary
   const data = await response;
-  console.log("Response data:", data);
   window.location.reload();
   // ...
 }
 
 export async function onSubmitDelete(event: FormEvent<HTMLFormElement>) {
-  console.log("masil");
   let idProjInput = document.getElementById("hidden-id") as HTMLInputElement;
   const id_proj = idProjInput.value;
-  console.log(id_proj);
-
   event.preventDefault();
 
   const response = fetch("/api/project/delete/" + id_proj, {
@@ -101,7 +90,6 @@ export async function onSubmitDelete(event: FormEvent<HTMLFormElement>) {
 
   // // Handle response if necessary
   const data = await response;
-  console.log("Response data:", data);
   window.location.reload();
   // ...
 }

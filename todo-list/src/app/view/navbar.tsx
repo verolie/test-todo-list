@@ -10,8 +10,8 @@ export default function Navbar() {
   return (
     <div className="Navbar">
       <div className="NavLog w-80">
-        <h1 className="NavHello">Hello,</h1>
-        <h1 className="NavName">my name Vero</h1>
+        <h1 className="NavHello">ToDo,</h1>
+        <h1 className="NavName">Employee Task</h1>
       </div>
       <nav className="NavRoutes w-full justify-end">
         <Link
