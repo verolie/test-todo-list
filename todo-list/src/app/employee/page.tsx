@@ -16,7 +16,7 @@ export default function Employee() {
   const [isOpenEdit, setIsOpenEdit] = useState(false);
   const [isOpenInsert, setIsOpenInsert] = useState(false);
   const [employee, setEmployee] = useState<EmployeeView[]>([]);
-  const [project, setProjects] = useState<EmployeeView[]>([]);
+  const [project, setProjects] = useState<Project[]>([]);
   const [selected, setSelected] = useState<number | null>(null);
   const [inputEmployeeName, setInputEmployeeName] = useState("");
   const [inputEmployeeTitle, setInputEmployeeTitle] = useState("");

@@ -89,6 +89,7 @@ export async function onSubmitEdit(event: FormEvent<HTMLFormElement>) {
   // // Handle response if necessary
   const data = await response;
   console.log("Response data:", data);
+  window.location.reload();
   // ...
 }
 
@@ -111,5 +112,6 @@ export async function onSubmitDelete(event: FormEvent<HTMLFormElement>) {
   // // Handle response if necessary
   const data = await response;
   console.log("Response data:", data);
+  window.location.reload();
   // ...
 }

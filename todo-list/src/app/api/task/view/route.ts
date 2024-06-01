@@ -8,12 +8,14 @@ export async function GET(req: NextRequest) {
       await connectDatabase()
       const task = await prisma.task.findMany();
 
+      console.log(task)
       return new NextResponse(JSON.stringify(task), {
       status: 200,
       headers: {
         'Content-Type': 'application/json',
       },
     });
+
     } catch (error) {
       return new Response("Failed to search data")
     }
