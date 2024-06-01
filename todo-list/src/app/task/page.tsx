@@ -31,6 +31,7 @@ export default function Task() {
   const [inputProject, setInputProject] = useState("");
   const [inputDueDate, setInputDueDate] = useState("");
   const [inputTaskId, setInputTaskId] = useState("");
+
   const router = useRouter();
 
   type TaskView = {

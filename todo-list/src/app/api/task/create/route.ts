@@ -3,6 +3,8 @@
 import { prisma } from '../../../../../lib/prisma';
 import { connectDatabase } from '../../multi';
 
+export const dynamic = "force-dynamic"; 
+
 type Task = {
   task_title     : string;
   task_desc      : string;

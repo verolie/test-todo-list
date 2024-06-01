@@ -3,6 +3,8 @@ import { prisma } from '../../../../../lib/prisma';
 import { connectDatabase } from '../../multi';
 import { NextRequest, NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic"; 
+
 type Project = {
   project_name: string;
   project_desc: string;

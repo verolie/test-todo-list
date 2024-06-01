@@ -2,6 +2,8 @@
 import { prisma } from '../../../../../lib/prisma';
 import { connectDatabase } from '../../multi';
 
+export const dynamic = "force-dynamic"; 
+
 type Project = {
   id: string;
   project_name: string;
