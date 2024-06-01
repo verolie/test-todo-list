@@ -3,7 +3,7 @@
 import { prisma } from '../../../../../lib/prisma';
 import { connectDatabase } from '../../multi';
 
-export const dynamic = "force-dynamic"; 
+export const fetchCache = 'force-no-store';
 
 type Task = {
   task_title     : string;

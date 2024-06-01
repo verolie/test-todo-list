@@ -21,6 +21,7 @@ export default function Project() {
   const [inputProjectDesc, setInputProjectDesc] = useState("");
   const [inputProjectId, setInputProjectId] = useState("");
   const router = useRouter();
+  const fetchCache = "force-no-store";
 
   const customStyles = {
     overlay: {
@@ -43,6 +44,7 @@ export default function Project() {
   };
 
   useEffect(() => {
+    const dynamic = "force-dynamic";
     const fetchProjects = async () => {
       try {
         const response = await fetch("/api/project/view", {
@@ -50,6 +52,7 @@ export default function Project() {
           headers: {
             "Content-Type": "application/json",
           },
+          cache: "no-store",
         });
 
         console.log(response);

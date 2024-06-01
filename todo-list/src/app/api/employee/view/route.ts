@@ -3,7 +3,7 @@ import { prisma } from '../../../../../lib/prisma';
 import { connectDatabase } from '../../multi';
 import { NextRequest, NextResponse } from "next/server";
 
-export const dynamic = "force-dynamic"; 
+export const fetchCache = 'force-no-store';
 
 type Project = {
   project_name: string;

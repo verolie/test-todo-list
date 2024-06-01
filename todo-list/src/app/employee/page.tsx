@@ -22,6 +22,7 @@ export default function Employee() {
   const [inputEmployeeTitle, setInputEmployeeTitle] = useState("");
   const [inputProjectName, setInputProjectName] = useState("");
   const [inputEmployeeId, setInputEmployeeId] = useState("");
+  const fetchCache = "force-no-store";
   const router = useRouter();
 
   type EmployeeView = {
@@ -56,6 +57,7 @@ export default function Employee() {
         headers: {
           "Content-Type": "application/json",
         },
+        cache: "no-store",
       });
 
       console.log(response);
@@ -74,6 +76,7 @@ export default function Employee() {
         headers: {
           "Content-Type": "application/json",
         },
+        cache: "no-store",
       });
 
       console.log(responseProj);

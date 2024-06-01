@@ -31,7 +31,7 @@ export default function Task() {
   const [inputProject, setInputProject] = useState("");
   const [inputDueDate, setInputDueDate] = useState("");
   const [inputTaskId, setInputTaskId] = useState("");
-
+  const fetchCache = "force-no-store";
   const router = useRouter();
 
   type TaskView = {
@@ -74,6 +74,7 @@ export default function Task() {
         headers: {
           "Content-Type": "application/json",
         },
+        cache: "no-store",
       });
       if (!response.ok) {
         throw new Error("Failed to fetch projects");
@@ -90,6 +91,7 @@ export default function Task() {
         headers: {
           "Content-Type": "application/json",
         },
+        cache: "no-store",
       });
 
       if (!responseProj.ok) {
@@ -107,6 +109,7 @@ export default function Task() {
         headers: {
           "Content-Type": "application/json",
         },
+        cache: "no-store",
       });
 
       if (!responseProj.ok) {

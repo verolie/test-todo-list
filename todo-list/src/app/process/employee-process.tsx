@@ -1,5 +1,7 @@
 import { FormEvent } from "react";
 
+export const fetchCache = "force-no-store";
+
 type Employee = {
   employee_name: string;
   job_title: string;
@@ -41,6 +43,7 @@ export async function onSubmitInsert(event: FormEvent<HTMLFormElement>) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(employeeData),
+    cache: "no-store",
   });
 
   // // Handle response if necessary
@@ -79,6 +82,7 @@ export async function onSubmitEdit(event: FormEvent<HTMLFormElement>) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(employeeData),
+    cache: "no-store",
   });
 
   // // Handle response if necessary
@@ -100,6 +104,7 @@ export async function onSubmitDelete(event: FormEvent<HTMLFormElement>) {
     headers: {
       "Content-Type": "application/json",
     },
+    cache: "no-store",
   });
 
   // // Handle response if necessary
