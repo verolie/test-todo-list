@@ -133,7 +133,6 @@ export default function Task() {
             caches.delete(name);
           });
         });
-        alert("Complete Cache Cleared");
       };
 
       clearCacheData();

@@ -101,7 +101,6 @@ export default function Employee() {
           caches.delete(name);
         });
       });
-      alert("Complete Cache Cleared");
     };
 
     clearCacheData();

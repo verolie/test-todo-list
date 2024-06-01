@@ -77,12 +77,11 @@ export default function Project() {
             caches.delete(name);
           });
         });
-        alert("Complete Cache Cleared");
       };
 
       clearCacheData();
     }, []);
-    
+
   function onChange(indexCheck: number) {
     router.refresh();
 
