@@ -125,18 +125,18 @@ export default function Task() {
     fetchProject();
     fetchEmployee();
   }, []);
-
-    useEffect(() => {
-      const clearCacheData = () => {
-        caches.keys().then((names) => {
-          names.forEach((name) => {
-            caches.delete(name);
-          });
+  //test
+  useEffect(() => {
+    const clearCacheData = () => {
+      caches.keys().then((names) => {
+        names.forEach((name) => {
+          caches.delete(name);
         });
-      };
+      });
+    };
 
-      clearCacheData();
-    }, []);
+    clearCacheData();
+  }, []);
 
   function onChange(indexCheck: number) {
     router.refresh();
